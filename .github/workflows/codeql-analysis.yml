@@ -23,17 +23,14 @@ jobs:
       matrix:
         include:
           - language: c-cpp
-
+            build-mode: autobuild
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+      - uses: github/codeql-action/init@v4
         with:
-         languages: ${{ matrix.language }}
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v4
+      - uses: actions/checkout@v3
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
