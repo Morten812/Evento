@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: ['csharp]
+          - language: c-cpp
 
     steps:
       - uses: actions/checkout@v3
