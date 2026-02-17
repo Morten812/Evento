@@ -31,3 +31,6 @@ jobs:
 
       - name: Build
         run: dotnet build Evento.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --no-build
